@@ -1,0 +1,51 @@
+management:
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include: ["configprops", "env", "metrics", "prometheus", "health","info", "threaddump"]
+
+  info:
+    git:
+      mode: full
+  metrics:
+    enabled: true
+    export:
+      prometheus:
+        enabled: true
+    web:
+      server:
+        auto-time-requests: true
+    distribution:
+      percentiles:
+        all: 0.7, 0.95, 0.99
+  prometheus:
+    enabled: true
+  server:
+    port: 6060
+  endpoint:
+    restart:
+      enabled: true
+server:
+  port: 6060
+
+spring:
+  couchbase:
+    bucket:
+      name: bbscart
+      password: bbscart
+      username: bbscart
+    bootstrap-hosts: localhost:8091
+
+swagger:
+  api:
+    title: Cart Service
+    basePackage: com.bbs.cart
+    name: Biswa
+    description: Swagger for Cart Service Application
+    version: 0.0.1-SNAPSHOT
+    contact: Cart Team
+    license: Apache 2.0
+    licenseUrl: http://www.apache.org/licenses/LICENSE-2.0.html
+    email: test@gmail.com
+    url: http://www.apache.org
