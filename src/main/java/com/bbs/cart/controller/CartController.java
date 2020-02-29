@@ -42,12 +42,12 @@ public class CartController {
     }
 
 
-    @ApiOperation(value = "Delete Cart", produces = CommonConstants.STREAM_JSON_TYPE,
+    @ApiOperation(value = "Get Cart", produces = CommonConstants.STREAM_JSON_TYPE,
             notes = "This API used to delete the cart")
     @ApiResponses(value = {@ApiResponse(code = 400, message = CommonConstants.BAD_REQUEST),
             @ApiResponse(code = 500, message = CommonConstants.SERVER_ERROR)})
 
-    @GetMapping(value = "/cart",
+    @GetMapping(value = "/cart/{cartId}",
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_STREAM_JSON_VALUE})
     @ResponseStatus(code = HttpStatus.OK)
     @Timed
