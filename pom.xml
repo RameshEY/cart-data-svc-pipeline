@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.bbs</groupId>
-	<artifactId>cart-data-service</artifactId>
+	<artifactId>cart-data-svc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cart-data-service</name>
+	<name>cart-data-svc</name>
 	<description>Demo project for cart data service</description>
 
 	<properties>
