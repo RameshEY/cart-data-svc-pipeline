@@ -46,10 +46,15 @@ public class SwaggerConfig {
     @Value("${swagger.api.basePackage}")
     private String basePackage;
 
+    @Value("${swagger.host.name}")
+    private String apiBasePath;
+
     @Bean
     public Docket api() {
 
-        return new Docket(DocumentationType.SWAGGER_2).select()
+        return new Docket(DocumentationType.SWAGGER_2)
+                .host(apiBasePath)
+                .select()
                 .apis(RequestHandlerSelectors
                         .basePackage(basePackage))
                 .paths(PathSelectors.any())

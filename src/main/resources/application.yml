@@ -28,6 +28,11 @@ management:
       enabled: true
 server:
   port: 6060
+  servlet:
+    context-path: /cartdata
+    session:
+      cookie:
+        http-only: true
 
 spring:
   couchbase:
@@ -35,9 +40,11 @@ spring:
       name: bbscart
       password: bbscart
       username: bbscart
-    bootstrap-hosts: localhost:8091
+    bootstrap-hosts: ${CASSANDRA_URI}
 
 swagger:
+  host:
+    name: localhost:${server.port}/cartdata
   api:
     title: Cart Service
     basePackage: com.bbs.cart
