@@ -16,8 +16,6 @@ public class ContextPathFilterConfig {
         return (serverWebExchange, webFilterChain) -> {
             ServerHttpRequest request = serverWebExchange.getRequest();
             String path = request.getURI().getPath();
-            System.out.println("path *********"+path);
-            System.out.println("contextPath *********"+contextPath);
             if (path.contains(contextPath)) {
                 return webFilterChain.filter(serverWebExchange.mutate()
                         .request(request.mutate().contextPath(contextPath).build()).build());

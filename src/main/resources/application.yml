@@ -40,7 +40,7 @@ spring:
       name: bbscart
       password: bbscart
       username: bbscart
-    bootstrap-hosts: ${CASSANDRA_URI}
+    bootstrap-hosts: ${CASSANDRA_HOST_URL}
 
 swagger:
   host:

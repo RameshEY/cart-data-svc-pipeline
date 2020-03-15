@@ -1,0 +1,5 @@
+#!/bin/sh
+
+LOCAL_IP=`ifconfig | grep -A 1 'en0'  | tail -1 | cut -d ' ' -f 2`
+export CASSANDRA_HOST_URL="$LOCAL_IP:8091"
+echo $CASSANDRA_HOST_URL
