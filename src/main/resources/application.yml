@@ -34,17 +34,7 @@ server:
       cookie:
         http-only: true
 
-spring:
-  couchbase:
-    bucket:
-      name: bbscart
-      password: bbscart
-      username: bbscart
-    bootstrap-hosts: ${CASSANDRA_HOST_URL}
-
 swagger:
-  host:
-    name: localhost:${server.port}/cartdata
   api:
     title: Cart Service
     basePackage: com.bbs.cart
@@ -56,3 +46,30 @@ swagger:
     licenseUrl: http://www.apache.org/licenses/LICENSE-2.0.html
     email: test@gmail.com
     url: http://www.apache.org
+---
+spring:
+  profiles: default
+  couchbase:
+    bucket:
+      name: bbscart
+      password: bbscart
+      username: bbscart
+    bootstrap-hosts: localhost:8091
+
+swagger:
+  host:
+    name: localhost:${server.port}/cartdata
+
+---
+spring:
+  profiles: local
+  couchbase:
+    bucket:
+      name: bbscart
+      password: bbscart
+      username: bbscart
+    bootstrap-hosts: ${CASSANDRA_HOST_URL}
+
+swagger:
+  host:
+    name: localhost/cartdata
