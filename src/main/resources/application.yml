@@ -38,7 +38,7 @@ swagger:
   api:
     title: Cart Service
     basePackage: com.bbs.cart
-    name: Biswa
+    name: Ramesh
     description: Swagger for Cart Service Application
     version: 0.0.1-SNAPSHOT
     contact: Cart Team
